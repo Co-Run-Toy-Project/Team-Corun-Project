@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-
+import projectDummy from '../../data/project-dummy.json'
 
 const OurProjectArea = styled.div`
     width : 100vw;
@@ -32,6 +32,7 @@ const ProjectInfo = styled.div`
     h2 {
         color: ${(props) => props.theme.projectTitleGray};
         font-weight: 700;
+        margin-top: 30px;
     }
     .date {
         font-weight: 700;
@@ -43,6 +44,7 @@ const ProjectInfo = styled.div`
         display: flex;
         flex-flow: column;
         align-items: center;
+        margin-bottom: 20px;
     }
     .btn {
         display: flex;
@@ -55,6 +57,11 @@ const ProjectInfo = styled.div`
         margin-top: 15px;
         cursor: pointer;
         background-color:  ${(props) => props.theme.bgColor};
+        transition: 0.3s;
+    }
+    .btn:hover {
+        color: ${(props) => props.theme.gray};
+        transition: 0.3s;
     }
     .btn>img {
         width: 20px;
@@ -66,6 +73,9 @@ const ProjectInfo = styled.div`
         height: 1px;
         margin-top: 5px;
         background-color:  ${(props) => props.theme.black};
+    }
+    a {
+        text-decoration: none;
     }
 `
 
@@ -88,6 +98,7 @@ const Carousel = styled.div`
         width: 50%;
         height: 40px;
         background-color : ${(props) => props.theme.gray};
+        
     }
 
 `
@@ -101,26 +112,38 @@ const OurProject = () => {
         </TitleBox>
         <ProjectInfo>
             <div className='project-info-title'>
-                <div className='info-text'>
-                   <h2>Shopping mall Clone Coding Project</h2>
-                  <p className='date'>22.08.16 ~ 22.08.30</p>
-                </div>
-                <div className='btn-box'>
-                    <button className='btn'>
-                        <img src='/icons/click.png' className='btn-icon'></img>
-                        <p>배포 사이트 이동하기</p>
-                    </button>
-                        <div className='border-line'></div>
-                </div>
-            </div>
-            <Carousel>
-                <div className='slide-box'>
-                    <img className='slide-img'></img>
-                </div>
-                <div className='slide-btn-box'>
+                <ul className='info-title'>
+                    {projectDummy.project.map(el => (
+                        <li key={el.id}>
+                            <h2>{el.title}</h2>
+                            <p className='date'>{el.date}</p>
+            
+                            <a href={el.page}>
+                                <div className='btn-box'>
+                                   <button className='btn'>
+                                      <img src='/icons/click.png' className='btn-icon'></img>
+                                      <p>배포 사이트 이동하기</p>
+                                   </button>
+                                      <div className='border-line'></div>
+                                </div>
+                            </a>
 
-                </div>
-            </Carousel>
+                            <Carousel>
+                                <div className='slide-box'>
+                                    <img className='slide-img'></img>
+                                </div>
+                                <div className='slide-btn-box'>
+
+                                </div>
+                            </Carousel>
+                        </li>
+                    ))}
+                    
+                </ul>
+
+
+               
+            </div>
         </ProjectInfo>
         </OurProjectArea>
     ) 

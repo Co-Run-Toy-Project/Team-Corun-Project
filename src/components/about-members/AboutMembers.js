@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import members from "../../data/members.json";
+import Switch from "./Switch";
 
 const Container = styled.div`
   display: flex;
@@ -16,18 +17,41 @@ const ProfileContainer = styled.div`
   align-items: center;
 
   width: 100%;
+  margin-left: 30px;
+  margin-bottom: 50px;
 `;
 
 const Circle = styled.div`
   width: 300px;
   height: 300px;
-
   border-radius: 50%;
+
   background-color: ${(props) => props.theme.gray};
+
+  /* 이동을 위한 css */
+  /* 토글처럼 해야겠다. */
+  position: relative;
+  animation-name: LeftToRight;
+  animation-duration: 1s;
+  animation-iteration-count: no-repeat;
+  animation-direction: alternate;
+
+
+  @keyframes LeftToRight {
+        0% {
+            left: 0%;
+           
+        }
+        to {
+            left: 70%;
+            
+        }
+    }
+ 
 `;
 
 const InfoCotainer = styled.div`
-  margin-left: 30px;
+  margin-left: 40px;
 `;
 
 const NameArea = styled.div`
@@ -63,7 +87,7 @@ export default function AboutMembers() {
   const Name = () =>
     members.map((member) => (
       <ProfileContainer>
-        <Circle />
+        <Switch />
         <InfoCotainer>
           <NameArea>
             <h1>{member.name}</h1>

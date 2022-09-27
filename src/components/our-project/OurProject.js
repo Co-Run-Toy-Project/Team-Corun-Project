@@ -113,6 +113,7 @@ const OurProject = () => {
         <ProjectInfo>
             <div className='project-info-title'>
                 <ul className='info-title'>
+                    {/* 39번 이슈 다시 커밋 */}
                     {projectDummy.project.map(el => (
                         <li key={el.id}>
                             <h2>{el.title}</h2>

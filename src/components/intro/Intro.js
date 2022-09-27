@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MainContainer = styled.div`
   position: relative;
@@ -102,6 +102,14 @@ const Logined = styled.div`
 function Intro() {
   const [phrase, setPhrase] = useState('안녕하세요!');
   const [userName, setUserName] = useState('unknown');
+  // let index = 0;
+
+  // function typing(){
+  //   typing1.textContent += phrase[idx++]
+  // }
+  // useEffect(() => {
+    
+  // },[])
 
   return (
     <>
@@ -115,7 +123,7 @@ function Intro() {
 
         <ContentsContainer>
           <p className='greeting'>
-            <span>{phrase}</span>
+            <span className='typing1'>{phrase}</span>
             <span>저희는 Corun 팀 입니다. </span>
             {/* <span> 오늘 날씨는 따듯하군요!:) </span> */}
           </p>

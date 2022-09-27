@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+
 import projectDummy from '../../data/project-dummy.json'
 
 const OurProjectArea = styled.div`
@@ -32,7 +33,9 @@ const ProjectInfo = styled.div`
     h2 {
         color: ${(props) => props.theme.projectTitleGray};
         font-weight: 700;
+
         margin-top: 30px;
+
     }
     .date {
         font-weight: 700;
@@ -44,7 +47,9 @@ const ProjectInfo = styled.div`
         display: flex;
         flex-flow: column;
         align-items: center;
+
         margin-bottom: 20px;
+
     }
     .btn {
         display: flex;
@@ -62,6 +67,7 @@ const ProjectInfo = styled.div`
     .btn:hover {
         color: ${(props) => props.theme.gray};
         transition: 0.3s;
+
     }
     .btn>img {
         width: 20px;
@@ -74,6 +80,7 @@ const ProjectInfo = styled.div`
         margin-top: 5px;
         background-color:  ${(props) => props.theme.black};
     }
+    
     a {
         text-decoration: none;
     }
@@ -98,7 +105,6 @@ const Carousel = styled.div`
         width: 50%;
         height: 40px;
         background-color : ${(props) => props.theme.gray};
-        
     }
 
 `
@@ -112,6 +118,7 @@ const OurProject = () => {
         </TitleBox>
         <ProjectInfo>
             <div className='project-info-title'>
+
                 <ul className='info-title'>
                     {/* 39번 이슈 다시 커밋 */}
                     {projectDummy.project.map(el => (
@@ -145,6 +152,7 @@ const OurProject = () => {
 
                
             </div>
+
         </ProjectInfo>
         </OurProjectArea>
     ) 

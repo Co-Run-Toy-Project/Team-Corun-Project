@@ -21,34 +21,7 @@ const ProfileContainer = styled.div`
   margin-bottom: 50px;
 `;
 
-const Circle = styled.div`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
 
-  background-color: ${(props) => props.theme.gray};
-
-  /* 이동을 위한 css */
-  /* 토글처럼 해야겠다. */
-  position: relative;
-  animation-name: LeftToRight;
-  animation-duration: 1s;
-  animation-iteration-count: no-repeat;
-  animation-direction: alternate;
-
-
-  @keyframes LeftToRight {
-        0% {
-            left: 0%;
-           
-        }
-        to {
-            left: 70%;
-            
-        }
-    }
- 
-`;
 
 const InfoCotainer = styled.div`
   margin-left: 40px;
@@ -66,6 +39,7 @@ const SocialBtn = styled.button`
 
   border: none;
   border-radius: 15px;
+  z-index: -1;
 
   &:hover {
     transition: 0.5s;
@@ -81,7 +55,9 @@ const Description = styled.p`
 export default function AboutMembers() {
   const IterationSample = () => {
     // 초기상태 설정
+   
     const [members, setMembers] = useState(members);
+
   };
 
   const Name = () =>

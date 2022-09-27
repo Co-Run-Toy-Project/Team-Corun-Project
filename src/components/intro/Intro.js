@@ -121,11 +121,11 @@ function Intro() {
           </p>
           <LoginContainer>
             <LoginBtn className='loginToGoogle'>
-              <img className='googleLogoImg'src='/image/googleLogo.png'></img>
+              <img className='googleLogoImg'src={`${process.env.PUBLIC_URL}/image/googleLogo.png`}></img>
               <span style={{padding: '10px 0'}}>Google계정으로 로그인하기</span>
             </LoginBtn>
             <LoginBtn className='loginToGithub'>
-              <img className='githubLogoImg' src='/image/githubLogo.png'></img>
+              <img className='githubLogoImg' src={`${process.env.PUBLIC_URL}/image/gitHubLogo.png`}></img>
               <span>Github계정으로 로그인하기</span>
             </LoginBtn>
           </LoginContainer>

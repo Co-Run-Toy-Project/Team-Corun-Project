@@ -1,6 +1,7 @@
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import theme from "./data/theme";
+// import Intro from './components/intro/Intro';
 
 import Intro from './components/intro/Intro';
 import AboutTeam from './components/about-team/AboutTeam';
@@ -13,7 +14,7 @@ function App() {
       <Intro/>
       {/* <AboutTeam/> */}
       {/* <AboutMembers/> */}
-      {/* <Ending/> */}
+      {/* <Ending/> */}{/* <Intro/> */}
     </ThemeProvider>
   );
 }

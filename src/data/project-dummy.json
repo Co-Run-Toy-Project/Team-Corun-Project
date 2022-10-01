@@ -6,6 +6,7 @@
             "title": "Shopping-Mall Clone Coding",
             "date": "22.08.16 ~ 22.08.30",
             "page": "https://github.com/Co-Run-Toy-Project/shopping-mall-clone-coding",
+            "movelink": "하단의 이미지를 누르시면 해당 페이지로 이동합니다",
             "picture": [
                 {
                     "id" : 1,
@@ -29,6 +30,7 @@
             "title": "Tway Clone Coding React",
             "date": "22.08.31 ~ 22.09.13",
             "page": "https://co-run-toy-project.github.io/tway-react-project/",
+            "movelink": "배포 사이트 이동하기",
             "picture": [
                 {
                     "id" : 1,

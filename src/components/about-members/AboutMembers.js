@@ -101,7 +101,7 @@ export default function AboutMembers() {
             </a>
           </NameArea>
           <h2>{member.role}</h2>
-          <Description>{member.desc}</Description>
+          <Description>{member.strength}</Description>
         </InfoCotainer>
       </ProfileContainer>
     ));

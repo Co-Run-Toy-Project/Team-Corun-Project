@@ -16,6 +16,16 @@ const ProfileContainer = styled.div`
 
 const InfoCotainer = styled.div`
   margin-left: 40px;
+  transition: all 0.6s ease-in-out;
+
+  /* 정확히는 infoContainer가 사라지고 그 위에 정보창이 떠야하는데 Z-index 쓰면 되나  */
+  &.strength {
+    display: none;
+  }
+
+  &.role {
+    display: block;
+  }
 `;
 
 const NameArea = styled.div`
@@ -53,44 +63,23 @@ const Description = styled.div`
   white-space: pre-wrap;
 `;
 
-// button 말고 img 태그로 수정
-const ChangeCircle = styled.img`
-  position: relative;
-  width: 300px;
-  height: 300px;
-  border: none;
-  border-radius: 50%;
-  background-size: 300px;
-
-  left: 0%;
-  transition: all 0.6s ease-in-out;
-
-  &.open {
-    background-image: url("image/dummyTech.jpg");
-    background-size: 350px;
-    content: "";
-    left: 70%;
-  }
-`;
-
 const InfoArea = (member) => {
-  
   const [state, setState] = useState(false);
 
   const handleChangeState = () => {
     setState(!state);
-    // console.log(state);
   };
+
+  console.log(state);
 
   return (
     <ProfileContainer key={member.id}>
-      {/* 합치면 같이 움직임 */}
       <Switch
         state={state}
         profile={member.profile}
         parentCallback={handleChangeState}
       />
-      <InfoCotainer>
+      <InfoCotainer className={state ? "strength" : "role"}>
         <NameArea>
           <h1>{member.name}</h1>
           <a target="_blank" href={member.github}>

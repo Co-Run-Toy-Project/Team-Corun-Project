@@ -25,6 +25,7 @@ const AboutMembers = () => {
         name = {member.name}
         profile={member.profile}
         strength={member.strength}
+        role={member.role}
         github={member.github}
         blog={member.blog}/>
       ))}

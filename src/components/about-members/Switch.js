@@ -21,22 +21,14 @@ const ChangeCircle = styled.img`
   }
 `;
 
+// 프로필 창이 변경되는 함수
 const Switch = (props) => {
-  // 초기상태
-  const [state, setState] = useState(false);
-
-  const toggle = () => {
-    // toggle 누르면 state 바뀜
-    setState(!state);
-  };
-  // console.log(props);
   return (
     <ChangeCircle
-      onClick={toggle}
-      className={state ? "open" : ""}
-      src={process.env.PUBLIC_URL+props.profile}
+      onClick={props.parentCallback}
+      className={props.state ? "open" : ""}
+      src={process.env.PUBLIC_URL + props.profile}
     />
-
   );
 };
 

@@ -53,38 +53,38 @@ const slideUp = keyframes`
 const InfoCotainer = styled.div`
   margin-left: 40px;
   transition: all 0.5s ease-in-out;
-    z-index: -1;
+  z-index: -1;
 
   /* 정확히는 infoContainer가 사라지고 그 위에 정보창이 떠야하는데 Z-index쓰면 되나  */
   &.strength {
-    
-    animation-duration: 0.35s; 
+    animation-duration: 0.35s;
     animation-timing-function: ease-in-out;
     animation-name: ${slideRight};
     animation-fill-mode: forwards; /* 애니메이션 완료 후 마지막 keyframe 상태 유지 */
   }
 
   &.role {
-    animation-duration: 0.35s; 
+    animation-duration: 0.35s;
     animation-timing-function: ease-in-out;
     animation-name: ${slideLeft};
     animation-fill-mode: forwards; /* 애니메이션 완료 후 마지막 keyframe 상태 유지 */
   }
 `;
 
-
-
 const NameArea = styled.div`
   display: flex;
 
-  a {
+  align-items: center;
+
+  & > a {
+    display: flex;
     text-decoration: none;
     color: ${(props) => props.theme.black};
 
     margin-left: 10px;
 
-    text-align: center;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
 
     width: 100px;
     height: 36px;
@@ -126,6 +126,7 @@ const InfoArea = (member) => {
       <InfoCotainer className={state ? "strength" : "role"}>
         <NameArea>
           <h1>{member.name}</h1>
+          {/* 언제부터 또 연동이 안됐지 */}
           <a target="_blank" href={member.github}>
             Github
           </a>
@@ -134,7 +135,7 @@ const InfoArea = (member) => {
           </a>
         </NameArea>
         <h2>Front Developer</h2>
-        <Description>{state? member.role : member.strength }</Description>
+        <Description>{state ? member.role : member.strength}</Description>
       </InfoCotainer>
     </ProfileContainer>
   );

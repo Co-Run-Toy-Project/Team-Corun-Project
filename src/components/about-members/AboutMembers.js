@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import members from "../../data/members.json";
-import Switch from "./Switch";
+// import Switch from "./Switch";
 
 const Container = styled.div`
   display: flex;
@@ -79,17 +79,60 @@ const Description = styled.div`
   white-space: pre-wrap;
 `;
 
+// button 말고 img 태그로 수정
+const ChangeCircle = styled.img`
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;
+  background-size: 300px;
+ 
+  left: 0%;
+  transition: all 0.6s ease-in-out;
+
+  &.open {
+    background-image: url("image/dummyTech.jpg");
+    background-size: 350px;
+    content: "";
+    left: 70%;
+  }`;
+
 export default function AboutMembers() {
   const IterationSample = () => {
     // 초기상태 설정
     const [members, setMembers] = useState(members);
   };
 
-  const Name = () =>
-    members.map((member) => (
+
+  // 프로필 창이 변경되는 함수
+  const Switch = (props) => {
+    // 초기상태
+    const [state, setState] = useState(false);
+
+    // toggle 누르면 state 바뀜
+    const toggle = () => {
+      setState(!state);
+    };
+    
+    return (
+      <ChangeCircle
+        onClick={toggle}
+        className={state ? "open" : ""}
+        src={process.env.PUBLIC_URL+props.profile}
+      />
+
+    );
+  };
+
+ 
+  return (
+    <Container>
+      <h1>CoRun의 구성원을 소개합니다</h1>
+      {members.map((member) => (
       <ProfileContainer key={member.id}>
         <Switch profile={member.profile}/>
-        <InfoCotainer>
+        <InfoCotainer >
           <NameArea>
             <h1>{member.name}</h1>
             <a target="_blank" href={member.github}>
@@ -102,13 +145,7 @@ export default function AboutMembers() {
           <h2>{member.role}</h2>
           <Description>{member.strength}</Description>
         </InfoCotainer>
-      </ProfileContainer>
-    ));
-
-  return (
-    <Container>
-      <h1>CoRun의 구성원을 소개합니다</h1>
-      <Name />
+      </ProfileContainer>))};
     </Container>
   );
 }

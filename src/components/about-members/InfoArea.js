@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Switch from "./Switch";
 
@@ -14,19 +14,65 @@ const ProfileContainer = styled.div`
   margin-bottom: 50px;
 `;
 
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
+const slideLeft = keyframes`
+    from {
+        transform: translateX(-40%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+`;
+
+const slideRight = keyframes`
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-40%);
+    }
+`;
+
+const slideUp = keyframes`
+    from {
+        transform: translateY(500px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+`;
+
 const InfoCotainer = styled.div`
   margin-left: 40px;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.5s ease-in-out;
+    z-index: -1;
 
-  /* 정확히는 infoContainer가 사라지고 그 위에 정보창이 떠야하는데 Z-index 쓰면 되나  */
+  /* 정확히는 infoContainer가 사라지고 그 위에 정보창이 떠야하는데 Z-index쓰면 되나  */
   &.strength {
-    display: none;
+    
+    animation-duration: 0.35s; 
+    animation-timing-function: ease-in-out;
+    animation-name: ${slideRight};
+    animation-fill-mode: forwards; /* 애니메이션 완료 후 마지막 keyframe 상태 유지 */
   }
 
   &.role {
-    display: block;
+    animation-duration: 0.35s; 
+    animation-timing-function: ease-in-out;
+    animation-name: ${slideLeft};
+    animation-fill-mode: forwards; /* 애니메이션 완료 후 마지막 keyframe 상태 유지 */
   }
 `;
+
+
 
 const NameArea = styled.div`
   display: flex;

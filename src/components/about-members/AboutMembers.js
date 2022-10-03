@@ -88,11 +88,10 @@ export default function AboutMembers() {
   const Name = () =>
     members.map((member) => (
       <ProfileContainer key={member.id}>
-        <Switch />
+        <Switch profile={member.profile}/>
         <InfoCotainer>
           <NameArea>
             <h1>{member.name}</h1>
-            {/* ㅡㅡ 걍 a태그면 되는 거였네 괜히 땅팠네 */}
             <a target="_blank" href={member.github}>
               Github
             </a>

@@ -116,8 +116,6 @@ const InfoArea = (member) => {
     setState(!state);
   };
 
-  console.log(state);
-
   return (
     <ProfileContainer key={member.id}>
       <Switch
@@ -136,7 +134,7 @@ const InfoArea = (member) => {
           </a>
         </NameArea>
         <h2>Front Developer</h2>
-        <Description>{member.strength}</Description>
+        <Description>{state? member.role : member.strength }</Description>
       </InfoCotainer>
     </ProfileContainer>
   );

@@ -19,6 +19,7 @@ const ProfileContainer = styled.div`
 
   width: 100%;
   margin-left: 30px;
+  margin-top: 50px;
   margin-bottom: 50px;
 `;
 
@@ -58,21 +59,7 @@ const NameArea = styled.div`
   }
 `;
 
-const SocialBtn = styled.a`
-  margin-left: 10px;
-  width: 100px;
-  height: 36px;
-  opacity: 80%;
 
-  border: none;
-  border-radius: 15px;
-  z-index: -1;
-
-  &:hover {
-    transition: 0.5s;
-    background-color: ${(props) => props.theme.gray};
-  }
-`;
 
 const Description = styled.div`
   /* 개행 문자(\n) 인식 */
@@ -98,12 +85,6 @@ const ChangeCircle = styled.img`
     left: 70%;
   }`;
 
-export default function AboutMembers() {
-  const IterationSample = () => {
-    // 초기상태 설정
-    const [members, setMembers] = useState(members);
-  };
-
 
   // 프로필 창이 변경되는 함수
   const Switch = (props) => {
@@ -125,12 +106,21 @@ export default function AboutMembers() {
     );
   };
 
- 
+
+export default function AboutMembers() {
+  const InitialSetting = () => {
+    // 초기상태 설정
+    const [members, setMembers] = useState(members);
+  };
+
+  
+
   return (
     <Container>
       <h1>CoRun의 구성원을 소개합니다</h1>
       {members.map((member) => (
       <ProfileContainer key={member.id}>
+        {/* 합치면 같이 움직임 */}
         <Switch profile={member.profile}/>
         <InfoCotainer >
           <NameArea>
@@ -142,10 +132,11 @@ export default function AboutMembers() {
               Blog
             </a>
           </NameArea>
-          <h2>{member.role}</h2>
+          <h2>Front Developer</h2>
           <Description>{member.strength}</Description>
         </InfoCotainer>
       </ProfileContainer>))};
     </Container>
   );
 }
+

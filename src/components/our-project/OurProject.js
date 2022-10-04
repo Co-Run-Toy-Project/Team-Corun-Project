@@ -26,6 +26,7 @@ const TitleBox = styled.div`
 `;
 
 const ProjectInfo = styled.div`
+
   width: 100vw;
   text-align: center;
   .project-info-title {
@@ -79,6 +80,7 @@ const ProjectInfo = styled.div`
 `;
 
 const OurProject = () => {
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -100,5 +102,6 @@ const OurProject = () => {
     </OurProjectArea>
   );
 };
+
 
 export default OurProject;

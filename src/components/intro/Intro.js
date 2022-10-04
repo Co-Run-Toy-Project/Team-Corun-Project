@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MainContainer = styled.div`
   position: relative;
@@ -26,6 +26,21 @@ const ContentsContainer = styled.div`
     font-weight: 800; 
   }
 
+  .newline {
+    white-space: pre-line;
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    font-size: 4rem;
+  }
+
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
+
   @media screen and (max-width: 724px){
       padding: 20% 10%;
       flex-direction: column;
@@ -33,6 +48,10 @@ const ContentsContainer = styled.div`
       
       .greeting {
         font-size: 2.6rem;
+      }
+
+      .blink {
+        font-size: 3rem;
       }
     }
 `
@@ -100,8 +119,23 @@ const Logined = styled.div`
 `
 
 function Intro() {
-  const [phrase, setPhrase] = useState('안녕하세요!');
+  const [text, setText] = useState('');
+  const [count, setCount] = useState(0);
   const [userName, setUserName] = useState('unknown');
+
+  const content = "안녕하세요!\n 저희는 Corun 팀 입니다. ";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        setText(text + content[count]); // 이전 set한 문자 + 다음 문자
+        setCount(count + 1); // 개수 만큼 체크 
+    }, 200);
+    if(count === content.length)  {  // Count를 따로 두지 않고 Text.length 체크도 가능
+        clearInterval(interval); // 문자열 체크를 통해 setInterval을 해제합니다
+    }
+
+    return () => clearInterval(interval); // 언마운트시 setInterval을 해제합니다
+})
 
   return (
     <>
@@ -115,17 +149,19 @@ function Intro() {
 
         <ContentsContainer>
           <p className='greeting'>
-            <span>{phrase}</span>
-            <span>저희는 Corun 팀 입니다. </span>
+            <div className='newline'>
+              {text}
+              {count === content.length ? '' : <span className='blink'>|</span>}
+            </div>
             {/* <span> 오늘 날씨는 따듯하군요!:) </span> */}
           </p>
           <LoginContainer>
             <LoginBtn className='loginToGoogle'>
-              <img className='googleLogoImg'src='/image/googleLogo.png'></img>
+              <img className='googleLogoImg'src={`${process.env.PUBLIC_URL}/image/googleLogo.png`}></img>
               <span style={{padding: '10px 0'}}>Google계정으로 로그인하기</span>
             </LoginBtn>
             <LoginBtn className='loginToGithub'>
-              <img className='githubLogoImg' src='/image/githubLogo.png'></img>
+              <img className='githubLogoImg' src={`${process.env.PUBLIC_URL}/image/gitHubLogo.png`}></img>
               <span>Github계정으로 로그인하기</span>
             </LoginBtn>
           </LoginContainer>

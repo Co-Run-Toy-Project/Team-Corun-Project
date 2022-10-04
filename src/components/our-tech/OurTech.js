@@ -23,6 +23,8 @@ const MainBox = styled.div`
         text-align: center;
         margin-top: 3rem;
         justify-content: center;
+
+        margin-bottom: 10vh;
     }
 
 `
@@ -66,7 +68,9 @@ const TabMenu = styled.div`
         height: 100px;
     }
 
-
+    .tech__category{
+        display: none;
+    }
 
     .imgZone>img{
         display: none;
@@ -90,13 +94,15 @@ const TabMenu = styled.div`
     &.gray{
         /* background-color: ${(props) => props.theme.black}; */
         background-color: lightgray;
-        height: 18rem;
+        height: 40vh;
         transition-duration: 0.3s;
 
         .imgZone>img{
             display: block;
             transition-duration: 0.3s;
             filter: none;
+
+            margin-bottom: 8vh;
         }
 
         .script{
@@ -128,6 +134,15 @@ const TabMenu = styled.div`
             display: none;
             transition-duration: 0.3s;  
         }
+
+        padding-top: 1rem;
+
+        .tech__category{
+        display: flex;
+        font-family: "NanumSquareBold";
+        align-items: center;
+        justify-content: center;
+    }
     }
 
     &.standard{
@@ -159,6 +174,7 @@ const TechZone = () => {
                 className = {isOpen ===  1 ? "spread gray" :
                                 isOpen ===  0 ?  "standard" 
                                     : "shrink"}>
+                                        <div className="tech__category">기술 스택</div>
                 <div className = "imgZone">
                     <img className="js logo" src={process.env.PUBLIC_URL + 'image/Unofficial_JavaScript_logo_2.svg'}></img>
                     <img className="css logo" src={process.env.PUBLIC_URL + 'image/CSS3_logo_and_wordmark.svg'}></img>
@@ -173,6 +189,7 @@ const TechZone = () => {
             </TabMenu>
             <TabMenu onClick = {isOpen === -1 ? () => OpenTab(0) : () => OpenTab(-1)} className = {isOpen ===  -1 ? "spread gray" :
                 isOpen ===  0 ?  "standard" : "shrink"}>
+                <div className="tech__category">협업 스택</div>
                 <div className="imgZone">
                     <img className="js logo" src={process.env.PUBLIC_URL + 'image/Figma-logo.svg'}></img>
                     <img className="css logo" src={process.env.PUBLIC_URL + 'image/Git-logo.svg'}></img>

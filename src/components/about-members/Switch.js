@@ -24,10 +24,11 @@ const ChangeCircle = styled.img`
 // 프로필 창이 변경되는 함수
 const Switch = (props) => {
   return (
-    <ChangeCircle
-      onClick={props.parentCallback}
-      className={props.state ? "open" : ""}
-      src={process.env.PUBLIC_URL + props.profile}
+    // 여기서 a면 프로필 사진 b면 기술스택으로 할 것임
+    
+     <ChangeCircle
+      onClick={toggle}
+      className={state ? "open" : ""}
     />
   );
 };

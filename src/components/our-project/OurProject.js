@@ -55,14 +55,14 @@ const ProjectInfo = styled.div`
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        /* border-width: 0px 0px 1px 0px;
-        border-style: solid; */
         border-style: none;
         font-weight: 700;
         margin-top: 15px;
         cursor: pointer;
         background-color:  ${(props) => props.theme.bgColor};
         transition: 0.3s;
+        border-width: 0px 0px 2px 0px ;
+        border-style: solid;
     }
     .btn:hover {
         color: ${(props) => props.theme.gray};
@@ -72,13 +72,6 @@ const ProjectInfo = styled.div`
     .btn>img {
         width: 20px;
         margin-right: 5px;
-        /* height: 10px; */
-    }
-    .border-line {
-        width: 160px;
-        height: 1px;
-        margin-top: 5px;
-        background-color:  ${(props) => props.theme.black};
     }
     
     a {
@@ -130,9 +123,8 @@ const OurProject = () => {
                                 <div className='btn-box'>
                                    <button className='btn'>
                                       <img src='/icons/click.png' className='btn-icon'></img>
-                                      <p>배포 사이트 이동하기</p>
+                                      <p>{el.movelink}</p>
                                    </button>
-                                      <div className='border-line'></div>
                                 </div>
                             </a>
 

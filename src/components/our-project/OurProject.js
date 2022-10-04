@@ -4,6 +4,7 @@ import styled from "styled-components";
 import projectDummy from "../../data/project-dummy.json";
 import CarouselComponent from "./Carousel";
 
+
 const OurProjectArea = styled.div`
   width: 100vw;
   height: 100vw;

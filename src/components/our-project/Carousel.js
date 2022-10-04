@@ -6,7 +6,6 @@ import { Slide } from "./Slide";
 const Carousel = styled.div`
   width: 100%;
   height: 100%;
-  /* background-color: burlywood; */
   display: flex;
   flex-direction: column;
   justify-content: center;

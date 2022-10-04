@@ -97,10 +97,6 @@ const NameArea = styled.div`
       transition: 0.5s;
       background-color: ${(props) => props.theme.bgColor};
     }
-
-    &:visited {
-      background-color: ${(props) => props.theme.blue};
-    }
   }
 `;
 

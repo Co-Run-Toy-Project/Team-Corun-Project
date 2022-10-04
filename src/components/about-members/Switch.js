@@ -26,11 +26,12 @@ const Switch = (props) => {
   return (
     // 여기서 a면 프로필 사진 b면 기술스택으로 할 것임
     
-     <ChangeCircle
-      onClick={toggle}
-      className={state ? "open" : ""}
-    />
-  );
+    <ChangeCircle
+    onClick={props.parentCallback}
+    className={props.state ? "open" : ""}
+    src={props.profile}
+  />
+);
 };
 
 export default Switch;

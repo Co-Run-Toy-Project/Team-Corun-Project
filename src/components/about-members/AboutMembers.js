@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: column;
 
   width: 100vw;
+  padding: 50px;
 `;
 
 const ProfileContainer = styled.div`
@@ -21,17 +22,43 @@ const ProfileContainer = styled.div`
   margin-bottom: 50px;
 `;
 
-
-
 const InfoCotainer = styled.div`
   margin-left: 40px;
 `;
 
 const NameArea = styled.div`
   display: flex;
+      
+
+  a {
+    text-decoration: none;
+    color: ${(props => props.theme.black)};
+
+    margin-left: 10px;
+
+    text-align: center;
+    align-self: center;
+
+    width: 100px;
+    height: 36px;
+    
+
+    border: none;
+    border-radius: 25px;
+    background-color: ${(props) => props.theme.gray};
+
+    &:hover {
+      transition: 0.5s;
+      background-color: ${(props) => props.theme.bgColor};
+    }
+
+    &:visited {
+      background-color: ${(props) => props.theme.blue};
+    }
+  }
 `;
 
-const SocialBtn = styled.button`
+const SocialBtn = styled.a`
   margin-left: 10px;
   width: 100px;
   height: 36px;
@@ -47,7 +74,7 @@ const SocialBtn = styled.button`
   }
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   /* 개행 문자(\n) 인식 */
   white-space: pre-wrap;
 `;
@@ -55,23 +82,26 @@ const Description = styled.p`
 export default function AboutMembers() {
   const IterationSample = () => {
     // 초기상태 설정
-   
     const [members, setMembers] = useState(members);
-
   };
 
   const Name = () =>
     members.map((member) => (
-      <ProfileContainer>
+      <ProfileContainer key={member.id}>
         <Switch />
         <InfoCotainer>
           <NameArea>
             <h1>{member.name}</h1>
-            <SocialBtn>Github</SocialBtn>
-            <SocialBtn>Blog</SocialBtn>
+            {/* ㅡㅡ 걍 a태그면 되는 거였네 괜히 땅팠네 */}
+            <a target="_blank" href={member.github}>
+              Github
+            </a>
+            <a target="_blank" href={member.blog}>
+              Blog
+            </a>
           </NameArea>
           <h2>{member.role}</h2>
-          <Description>{member.desc}</Description>
+          <Description>{member.strength}</Description>
         </InfoCotainer>
       </ProfileContainer>
     ));

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import members from "../../data/members.json";
 
 // button 말고 input 태그로 수정
 const ChangeCircle = styled.button`
@@ -25,24 +24,9 @@ const ChangeCircle = styled.button`
   }
 `;
 
-const NewInfo = styled.div`
-  opacity: 0;
-  background-color: gray;
-  width: 500px;
-  height: 300px;
-
-  z-index: 1;
-
-  &.openInfo {
-    opacity: 1;
-    
-  }
-  `;
-
 const Switch = () => {
   // 초기상태
   const [state, setState] = useState(false);
-  // const [members, setMembers] = useState(members);
 
   const toggle = () => {
     // toggle 누르면 state 바뀜
@@ -50,13 +34,10 @@ const Switch = () => {
   };
 
   return (
-    // 여기서 a면 프로필 사진 b면 기술스택으로 할 것임
-    
      <ChangeCircle
       onClick={toggle}
       className={state ? "open" : ""}
     />
-   
   );
 };
 

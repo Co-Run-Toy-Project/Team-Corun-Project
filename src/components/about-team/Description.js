@@ -88,7 +88,10 @@ const Container = styled.div`
             filter : opacity(0.5) drop-shadow(0 0 0 ${(props) => props.theme.blue});
         }
     }
+
 `
+
+
 
 const titleAnimation={
     offscreen:{y:-100, opacity:0},
@@ -200,6 +203,7 @@ const Description = () => {
 
 
             <div className="footer">
+                <Link to = '/ourProject' style={{textDecoration : 'none'}}>
                     <motion.div className="moreInformation"
                         variants={linkAnimation}
                         initial={"offscreen"}
@@ -215,6 +219,7 @@ const Description = () => {
                         
                         <span className="icon-text">Corun의 프로젝트 보러가기</span>
                     </motion.div>
+                </Link>
             </div>
         </Container>
     )

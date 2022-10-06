@@ -7,7 +7,7 @@ import CarouselComponent from "./Carousel";
 
 const OurProjectArea = styled.div`
   width: 100vw;
-  height: 100vw;
+  /* height: 100vw; */
   display: flex;
   flex-flow: column;
   font-family: "NanumGothic";

@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { motion } from "framer-motion";
+
+
 
 const MainContainer = styled.div`
   position: relative;
   /* display: flex;
   flex-direction: column;
   justify-content: space-around; */
+
+  background : ${(props) => props.temp <= 11 ? 'linear-gradient(36deg, rgba(199,230,255,1) 50%, rgba(69,190,252,1) 100%)' : 
+                            props.temp <= 21 ? 'linear-gradient(36deg, rgba(206,255,199,1) 50%, rgba(69,252,109,1) 100%);' : 
+                            props.temp <= 26 ? 'linear-gradient(36deg, rgba(255,254,199,1) 50%, rgba(252,185,69,1) 100%)' : 'linear-gradient(36deg, rgba(255,216,122,1) 50%, rgba(252,105,69,1) 100%)'};
+
+
+  
+
+ 
   width: 100vw;
   height: 100vh;
 `
@@ -24,6 +37,11 @@ const ContentsContainer = styled.div`
     flex-direction: column;
     font-size: 3.5rem;
     font-weight: 800; 
+
+    > span {
+      font-size : 30px;
+      margin-top : 50px;
+    }
   }
 
   .newline {
@@ -118,12 +136,43 @@ const Logined = styled.div`
   }
 `
 
+
+const textAnimate1={
+  offscreen:{y:-100, opacity:0},
+  onscreen:{y:0,
+  opacity:1,
+  transition: {type:"spring",
+  bounce:0.4,
+  duration:1,
+  delay : 6}
+}
+}
+
+
+
+
+
 function Intro() {
   const [text, setText] = useState('');
   const [count, setCount] = useState(0);
   const [userName, setUserName] = useState('unknown');
 
   const content = "안녕하세요!\n 저희는 Corun 팀 입니다. ";
+
+  const [temp, setTemp] = useState(0);
+
+  
+  axios('https://api.openweathermap.org/data/2.5/weather?lat=37.33&lon=126.59&appid=82b8d36158d9bdc8a995df159d8f3530')
+  .then((res)=> {
+    // console.log(res.data.main.temp);
+    setTemp(res.data.main.temp - 273.15);
+  })
+
+
+  console.log(temp);
+  // setTemp(27);
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -139,7 +188,7 @@ function Intro() {
 
   return (
     <>
-      <MainContainer>
+      <MainContainer temp = {temp}>
         {/* <Logined>
           <span className='userName'> {userName} </span>
           <div className='logoutBtn'>
@@ -153,7 +202,9 @@ function Intro() {
               {text}
               {count === content.length ? '' : <span className='blink'>|</span>}
             </div>
-            {/* <span> 오늘 날씨는 따듯하군요!:) </span> */}
+            {temp <= 11 ? <motion.span variants={textAnimate1} initial={"offscreen"} whileInView={"onscreen"} viewport={{once:true, amount:0.1}}> 오늘 날씨는 매우 춥네요!☃️ </motion.span> : 
+             temp <= 21 ? <motion.span variants={textAnimate1} initial={"offscreen"} whileInView={"onscreen"} viewport={{once:true, amount:0.1}}> 오늘 날씨는 시원하군요!🙂</motion.span> : 
+             temp <= 26 ? <motion.span variants={textAnimate1} initial={"offscreen"} whileInView={"onscreen"} viewport={{once:true, amount:0.1}}> 오늘 날씨는 따듯하네요!😊</motion.span> : <motion.span variants={textAnimate1} initial={"offscreen"} whileInView={"onscreen"} viewport={{once:true, amount:0.1}}> 오늘 날씨는 매우 덥네요!⛱️ </motion.span>}
           </p>
           <LoginContainer>
             <LoginBtn className='loginToGoogle'>

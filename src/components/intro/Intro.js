@@ -161,6 +161,7 @@ function Intro() {
 
   const [temp, setTemp] = useState(0);
 
+
   const API_ACCESS_ID = process.env.REACT_APP_WEATHERAPI_ACCESS_ID;
   
   axios(`https://api.openweathermap.org/data/2.5/weather?lat=37.33&lon=126.59&appid=${API_ACCESS_ID}`)

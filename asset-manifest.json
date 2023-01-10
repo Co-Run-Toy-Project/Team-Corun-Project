@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Team-Corun-Project/static/css/main.466fcaa5.css",
+    "main.js": "/Team-Corun-Project/static/js/main.735a4fcf.js",
+    "static/media/NanumGothic-Regular.ttf": "/Team-Corun-Project/static/media/NanumGothic-Regular.f88c6a28b0072219b05a.ttf",
+    "static/media/NanumGothic-ExtraBold.ttf": "/Team-Corun-Project/static/media/NanumGothic-ExtraBold.892daaa40aba83f61cdc.ttf",
+    "static/media/NanumGothic-Bold.ttf": "/Team-Corun-Project/static/media/NanumGothic-Bold.24a18de6a1a72287239c.ttf",
+    "static/media/NanumGothic-Bold.woff": "/Team-Corun-Project/static/media/NanumGothic-Bold.bd9b56675e34cd12c26c.woff",
+    "static/media/NanumGothic-ExtraBold.woff": "/Team-Corun-Project/static/media/NanumGothic-ExtraBold.ec8c88218781ba951c8e.woff",
+    "static/media/NanumGothic-Regular.woff": "/Team-Corun-Project/static/media/NanumGothic-Regular.d9fb35b78a41ca886f76.woff",
+    "static/media/NanumGothic-Bold.eot": "/Team-Corun-Project/static/media/NanumGothic-Bold.8fa32d6253301d91435f.eot",
+    "static/media/NanumGothic-Regular.eot": "/Team-Corun-Project/static/media/NanumGothic-Regular.2fcf8ecb1b3ce6a0b4dc.eot",
+    "static/media/NanumGothic-ExtraBold.eot": "/Team-Corun-Project/static/media/NanumGothic-ExtraBold.24ab0fb872a9d6389b83.eot",
+    "static/media/NanumSquareL.ttf": "/Team-Corun-Project/static/media/NanumSquareL.ace03365daa3d33bdec6.ttf",
+    "static/media/NanumSquareB.ttf": "/Team-Corun-Project/static/media/NanumSquareB.ebe0aa17b7967cd61f16.ttf",
+    "static/media/NanumSquareR.ttf": "/Team-Corun-Project/static/media/NanumSquareR.924c33f60f994924964c.ttf",
+    "static/media/NanumGothic-Bold.woff2": "/Team-Corun-Project/static/media/NanumGothic-Bold.f6661990fd77af2ecd03.woff2",
+    "static/media/NanumGothic-Regular.woff2": "/Team-Corun-Project/static/media/NanumGothic-Regular.276c077c45268e595e18.woff2",
+    "static/media/NanumGothic-ExtraBold.woff2": "/Team-Corun-Project/static/media/NanumGothic-ExtraBold.e9301120136044844064.woff2",
+    "static/media/NanumSquareL.woff": "/Team-Corun-Project/static/media/NanumSquareL.3f3fd18b13c88e9e4e0a.woff",
+    "static/media/NanumSquareB.woff": "/Team-Corun-Project/static/media/NanumSquareB.5d53333fc9d6d4bce630.woff",
+    "static/media/NanumSquareR.woff": "/Team-Corun-Project/static/media/NanumSquareR.94ee92ffdc2644f347d8.woff",
+    "static/media/NanumSquareL.eot": "/Team-Corun-Project/static/media/NanumSquareL.5c6a24ab214f84ec4c03.eot",
+    "static/media/NanumSquareB.eot": "/Team-Corun-Project/static/media/NanumSquareB.6e5f5d750c90b2c72f2b.eot",
+    "static/media/NanumSquareR.eot": "/Team-Corun-Project/static/media/NanumSquareR.a113ef7b1e9502965cf9.eot",
+    "static/media/NanumSquareR.woff2": "/Team-Corun-Project/static/media/NanumSquareR.339bcad38f212efa6d21.woff2",
+    "static/media/NanumSquareB.woff2": "/Team-Corun-Project/static/media/NanumSquareB.c225c2bb72eb6193b25e.woff2",
+    "index.html": "/Team-Corun-Project/index.html",
+    "main.466fcaa5.css.map": "/Team-Corun-Project/static/css/main.466fcaa5.css.map",
+    "main.735a4fcf.js.map": "/Team-Corun-Project/static/js/main.735a4fcf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.466fcaa5.css",
+    "static/js/main.735a4fcf.js"
+  ]
+}
